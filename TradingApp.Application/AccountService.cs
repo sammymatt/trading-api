@@ -12,11 +12,14 @@ public class AccountService : IAccountService
         _accountRepository = accountRepository;
     }
 
-    public async Task<bool> Create(string name, decimal amount)
+    public async Task<Account> Create(string name, decimal amount)
     {
         var account = new Account(name, amount);
-        await _accountRepository.AddAccount(account);
-        return true;
+        if (name != null && amount > 0)
+        {
+            await _accountRepository.AddAccount(account);
+        }
+        return account;
     }
 
     public async Task<Account?> Retrieve(string name)

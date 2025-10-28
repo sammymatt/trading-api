@@ -7,12 +7,10 @@ public static class AccountEndpoints
 {
     public static void RegisterEndpoints(this WebApplication app)
     {
-        app.MapPost("/api/accounts/create", async (AccountRequest request, IAccountService accountService) =>
+        app.MapPost("/api/accounts", async (AccountRequest request, IAccountService accountService) =>
         {
-            var result = await accountService.Create(request.Name, request.Amount);
-            return result 
-                ? Results.Ok("Account created") 
-                : Results.BadRequest("Account creation failed");
+            var account = await accountService.Create(request.Name, request.Amount);
+            return Results.Created($"/api/accounts/{account.Id}", account);
         });
 
         app.MapGet("/api/accounts/{name}", async (string name, IAccountService accountService) =>

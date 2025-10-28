@@ -1,4 +1,5 @@
 using Infrastructure.persistence;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using TradingApp.Api.endpoints;
@@ -23,6 +24,10 @@ var app = builder.Build();
 app.MapOpenApi(); // Exposes the OpenAPI document
 app.MapScalarApiReference(); // Provides the Scalar UI
 
+app.UseExceptionHandler(exceptionHandlerApp 
+    => exceptionHandlerApp.Run(async context 
+        => await Results.Problem()
+            .ExecuteAsync(context)));
 
 app.RegisterEndpoints();
 
