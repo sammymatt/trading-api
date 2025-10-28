@@ -6,8 +6,6 @@
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/TradingApp.Domain
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/TradingApp.Application.staticwebassets.endpoints.json
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/TradingApp.Application
-/Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/appsettings.Development.json
-/Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/appsettings.json
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/TradingApp.Infrastructure.staticwebassets.endpoints.json
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/TradingApp.Infrastructure
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/bin/Debug/net9.0/TradingApp.Infrastructure.deps.json
@@ -51,3 +49,4 @@
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/obj/Debug/net9.0/TradingApp.Infrastructure.pdb
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/obj/Debug/net9.0/TradingApp.Infrastructure.genruntimeconfig.cache
 /Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/obj/Debug/net9.0/ref/TradingApp.Infrastructure.dll
+/Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/obj/Debug/net9.0/TradingApp.Infrastructure.sourcelink.json

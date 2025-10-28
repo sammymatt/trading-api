@@ -1,5 +1,3 @@
-/Users/sam/RiderProjects/TradingApp/TradingApp.Application/bin/Debug/net9.0/appsettings.Development.json
-/Users/sam/RiderProjects/TradingApp/TradingApp.Application/bin/Debug/net9.0/appsettings.json
 /Users/sam/RiderProjects/TradingApp/TradingApp.Application/bin/Debug/net9.0/TradingApp.Application.staticwebassets.endpoints.json
 /Users/sam/RiderProjects/TradingApp/TradingApp.Application/bin/Debug/net9.0/TradingApp.Application
 /Users/sam/RiderProjects/TradingApp/TradingApp.Application/bin/Debug/net9.0/TradingApp.Application.deps.json
@@ -34,3 +32,4 @@
 /Users/sam/RiderProjects/TradingApp/TradingApp.Application/bin/Debug/net9.0/TradingApp.Domain.pdb
 /Users/sam/RiderProjects/TradingApp/TradingApp.Application/obj/Debug/net9.0/TradingApp.Application.csproj.AssemblyReference.cache
 /Users/sam/RiderProjects/TradingApp/TradingApp.Application/obj/Debug/net9.0/TradingA.EBF94229.Up2Date
+/Users/sam/RiderProjects/TradingApp/TradingApp.Application/obj/Debug/net9.0/TradingApp.Application.sourcelink.json

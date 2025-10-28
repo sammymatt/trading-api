@@ -61,3 +61,4 @@
 /Users/sam/RiderProjects/TradingApp/TradingApp.Api/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
 /Users/sam/RiderProjects/TradingApp/TradingApp.Api/bin/Debug/net9.0/TradingApp.Infrastructure.dll
 /Users/sam/RiderProjects/TradingApp/TradingApp.Api/bin/Debug/net9.0/TradingApp.Infrastructure.pdb
+/Users/sam/RiderProjects/TradingApp/TradingApp.Api/obj/Debug/net9.0/TradingApp.Api.sourcelink.json
