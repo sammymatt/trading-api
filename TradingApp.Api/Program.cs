@@ -19,12 +19,10 @@ builder.Services.AddDbContext<TradingDbContext>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi(); // Exposes the OpenAPI document
-    app.MapScalarApiReference(); // Provides the Scalar UI
-}
+
+app.MapOpenApi(); // Exposes the OpenAPI document
+app.MapScalarApiReference(); // Provides the Scalar UI
+
 
 app.RegisterEndpoints();
 
