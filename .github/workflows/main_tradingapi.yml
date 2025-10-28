@@ -23,8 +23,8 @@ jobs:
         with:
           dotnet-version: '9.x'
 
-      - name: Build
-        run: dotnet build ./TradingApp.Api/TradingApp.Api.csproj --configuration Release --no-restore
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ./TradingApp.Api/TradingApp.Api.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
@@ -54,3 +54,4 @@ jobs:
           package: .
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FEE173088ECD4AFE8AD8CFD7C45C18AB }}
+
