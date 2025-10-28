@@ -6,5 +6,5 @@ public interface IAccountService
 {
     public Task<bool> Create(string name, decimal amount);
     public Task<Account> Retrieve(string name);
-    //public bool Deposit(string accountId, decimal amount);
+    public Task<bool> Deposit(string accountId, decimal amount);
 }

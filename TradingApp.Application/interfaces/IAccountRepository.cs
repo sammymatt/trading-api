@@ -7,4 +7,6 @@ public interface IAccountRepository
     public Task<bool> AddAccount(Account account);
     
     public Task<Account?> GetAccount(string name);
+    
+    public Task<bool> Deposit(String name, decimal amount);
 }

@@ -25,12 +25,12 @@ public static class AccountEndpoints
             return Results.Ok(response);
         });
 
-        // app.MapPost("/api/accounts/deposit", (DepositRequest request, IAccountService accountService) =>
-        // {
-        //     var result = accountService.Deposit(request.Name, request.Amount);
-        //     return result 
-        //         ? Results.Ok("Deposit successful") 
-        //         : Results.BadRequest("Deposit failed");
-        // });
+        app.MapPost("/api/accounts/deposit", async (DepositRequest request, IAccountService accountService) =>
+        {
+            var result = await accountService.Deposit(request.Name, request.Amount);
+            return result 
+                ? Results.Ok("Deposit successful") 
+                : Results.BadRequest("Deposit failed");
+        });
     }
 }

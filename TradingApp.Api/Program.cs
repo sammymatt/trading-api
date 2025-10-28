@@ -27,6 +27,3 @@ app.MapScalarApiReference(); // Provides the Scalar UI
 app.RegisterEndpoints();
 
 app.Run();
-
-public record DepositRequest(string Name, decimal Amount);
-

@@ -25,14 +25,9 @@ public class AccountService : IAccountService
         return account;
     }
 
-    // public bool Deposit(string name, decimal amount)
-    // {
-    //     if (!_accounts.ContainsKey(name))
-    //         _accounts[name] = new Account(name, amount);
-    //
-    //     var account = _accounts[name];
-    //
-    //     // Delegate the business rule to Domain
-    //     return account.Deposit(amount);
-    // }
+    public async Task<bool> Deposit(string name, decimal amount)
+    {
+        var account = await _accountRepository.Deposit(name, amount);
+        return true;
+    }
 }
