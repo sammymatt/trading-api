@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingApp", "TradingApp\TradingApp.csproj", "{CEDD6B80-B30F-48B1-96AB-B2941817D3D2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingApp.Api", "TradingApp.Api\TradingApp.Api.csproj", "{F2B87828-2B76-4CCA-A1B1-7ACA05C14500}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingApp.Application", "TradingApp.Application\TradingApp.Application.csproj", "{172531DB-D1D3-4377-9988-AE85175FCAAC}"
@@ -16,10 +14,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEDD6B80-B30F-48B1-96AB-B2941817D3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEDD6B80-B30F-48B1-96AB-B2941817D3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEDD6B80-B30F-48B1-96AB-B2941817D3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEDD6B80-B30F-48B1-96AB-B2941817D3D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2B87828-2B76-4CCA-A1B1-7ACA05C14500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2B87828-2B76-4CCA-A1B1-7ACA05C14500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2B87828-2B76-4CCA-A1B1-7ACA05C14500}.Release|Any CPU.ActiveCfg = Release|Any CPU
