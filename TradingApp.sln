@@ -10,8 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingApp.Domain", "Tradin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingApp.Infrastructure", "TradingApp.Infrastructure\TradingApp.Infrastructure.csproj", "{439023A5-9431-45EC-A829-17139527D563}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingApp.UnitTests", "tests\TradingApp.UnitTests\TradingApp.UnitTests.csproj", "{E6137992-CFEC-4061-949C-4A5226B05FD4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,9 +36,5 @@ Global
 		{439023A5-9431-45EC-A829-17139527D563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{439023A5-9431-45EC-A829-17139527D563}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{439023A5-9431-45EC-A829-17139527D563}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6137992-CFEC-4061-949C-4A5226B05FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6137992-CFEC-4061-949C-4A5226B05FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6137992-CFEC-4061-949C-4A5226B05FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6137992-CFEC-4061-949C-4A5226B05FD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
