@@ -30,12 +30,12 @@ public class AccountRepository : IAccountRepository
         return await query.FirstOrDefaultAsync();
     }
 
-    public async Task<bool> Deposit(string name, decimal amount)
+    public async Task<Account> Deposit(string name, decimal amount)
     {
         Account account = await _context.Accounts.FirstOrDefaultAsync(a => a.Name == name);
         account.Balance += amount;
         _context.Accounts.Update(account);
         await _context.SaveChangesAsync();
-        return true;
+        return account;
     }
 }
