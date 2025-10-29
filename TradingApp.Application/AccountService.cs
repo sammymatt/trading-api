@@ -28,9 +28,15 @@ public class AccountService : IAccountService
         return account;
     }
 
-    public async Task<Account> Deposit(string name, decimal amount)
+    public async Task<Account> Deposit(string accountId, decimal amount)
     {
-        var account = await _accountRepository.Deposit(name, amount);
+        var account = await _accountRepository.Deposit(accountId, amount);
+        return account;
+    }
+    
+    public async Task<Account> Withdraw(string accountId, decimal amount)
+    {
+        var account = await _accountRepository.Withdraw(accountId, amount);
         return account;
     }
 }

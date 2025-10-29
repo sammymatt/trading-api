@@ -30,10 +30,19 @@ public class AccountRepository : IAccountRepository
         return await query.FirstOrDefaultAsync();
     }
 
-    public async Task<Account> Deposit(string name, decimal amount)
+    public async Task<Account> Deposit(string accountId, decimal amount)
     {
-        Account account = await _context.Accounts.FirstOrDefaultAsync(a => a.Name == name);
+        Account account = await _context.Accounts.FirstOrDefaultAsync(a => a.Id.ToString() == accountId);
         account.Balance += amount;
+        _context.Accounts.Update(account);
+        await _context.SaveChangesAsync();
+        return account;
+    }
+
+    public async Task<Account> Withdraw(string accountId, decimal amount)
+    {
+        Account account = await _context.Accounts.FirstOrDefaultAsync(a => a.Id.ToString() == accountId);
+        account.Balance -= amount;
         _context.Accounts.Update(account);
         await _context.SaveChangesAsync();
         return account;

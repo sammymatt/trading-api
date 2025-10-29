@@ -19,14 +19,20 @@ public static class AccountEndpoints
             if (account is null)
                 return Results.NotFound();
 
-            var response = new AccountDto(account.Name, account.Balance);
+            var response = new AccountResponse(account.Id, account.Name, account.Balance);
             return Results.Ok(response);
         });
 
-        app.MapPost("/api/accounts/deposit", async (DepositRequest request, IAccountService accountService) =>
+        app.MapPost("/api/accounts/{accountId}/deposit", async (string accountId, DepositRequest request, IAccountService accountService) =>
         {
-            var account = await accountService.Deposit(request.Name, request.Amount);
-            return Results.Ok(new DepositResponse(account.Id, account.Name, account.Balance));
+            var account = await accountService.Deposit(accountId, request.Amount);
+            return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
+        });
+        
+        app.MapPost("/api/accounts/{accountId}/withdraw", async (string accountId, WithdrawRequest request, IAccountService accountService) =>
+        {
+            var account = await accountService.Withdraw(accountId, request.Amount);
+            return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
         });
     }
 }
