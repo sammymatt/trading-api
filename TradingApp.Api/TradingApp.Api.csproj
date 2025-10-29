@@ -16,4 +16,8 @@
       <ProjectReference Include="..\TradingApp.Infrastructure\TradingApp.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="endpoints\" />
+    </ItemGroup>
+
 </Project>
