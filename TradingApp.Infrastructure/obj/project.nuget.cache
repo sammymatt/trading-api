@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tqudhvK3fnY=",
+  "dgSpecHash": "LjsLRaBO8uY=",
   "success": true,
   "projectFilePath": "/Users/sam/RiderProjects/TradingApp/TradingApp.Infrastructure/TradingApp.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,8 @@
     "/Users/sam/.nuget/packages/microsoft.extensions.logging/9.0.10/microsoft.extensions.logging.9.0.10.nupkg.sha512",
     "/Users/sam/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.10/microsoft.extensions.logging.abstractions.9.0.10.nupkg.sha512",
     "/Users/sam/.nuget/packages/microsoft.extensions.options/9.0.10/microsoft.extensions.options.9.0.10.nupkg.sha512",
-    "/Users/sam/.nuget/packages/microsoft.extensions.primitives/9.0.10/microsoft.extensions.primitives.9.0.10.nupkg.sha512"
+    "/Users/sam/.nuget/packages/microsoft.extensions.primitives/9.0.10/microsoft.extensions.primitives.9.0.10.nupkg.sha512",
+    "/Users/sam/.nuget/packages/sonaranalyzer.csharp/10.15.0.120848/sonaranalyzer.csharp.10.15.0.120848.nupkg.sha512"
   ],
   "logs": []
 }

@@ -9,3 +9,9 @@ public class TradingDbContext : DbContext
 
     public DbSet<Account> Accounts => Set<Account>();
 }
+
+public struct Car
+{
+    public string Brand;
+    public string Model;
+}

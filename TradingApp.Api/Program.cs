@@ -31,4 +31,4 @@ app.UseExceptionHandler(exceptionHandlerApp
 
 app.RegisterEndpoints();
 
-app.Run();
+await app.RunAsync();

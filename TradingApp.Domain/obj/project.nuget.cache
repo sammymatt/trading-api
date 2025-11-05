@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o20jdGEWgJ4=",
+  "dgSpecHash": "wrVTCDLPrpU=",
   "success": true,
   "projectFilePath": "/Users/sam/RiderProjects/TradingApp/TradingApp.Domain/TradingApp.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/sam/.nuget/packages/sonaranalyzer.csharp/10.15.0.120848/sonaranalyzer.csharp.10.15.0.120848.nupkg.sha512"
+  ],
   "logs": []
 }
