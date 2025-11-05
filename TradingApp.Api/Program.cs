@@ -18,8 +18,9 @@ builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddDbContext<TradingDbContext>(options =>
     options.UseInMemoryDatabase("TradingDb"));
 
-var app = builder.Build();
+builder.Services.AddHealthChecks();
 
+var app = builder.Build();
 
 app.MapOpenApi(); // Exposes the OpenAPI document
 app.MapScalarApiReference(); // Provides the Scalar UI
@@ -30,5 +31,7 @@ app.UseExceptionHandler(exceptionHandlerApp
             .ExecuteAsync(context)));
 
 app.RegisterEndpoints();
+
+app.MapHealthChecks("/health");
 
 await app.RunAsync();
