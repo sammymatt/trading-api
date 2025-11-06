@@ -35,30 +35,4 @@ public static class AccountEndpoints
             return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
         });
     }
-
-
-    public static void Test()
-    {
-        int[] nums = new int[4];
-        nums[0] = 1;
-        nums[1] = 2;
-        nums[2] = 3;
-        nums[3] = 4;
-        for (int i = 0; i < nums.Length; i++)
-        {
-            Console.WriteLine(nums[i]);
-        }
-
-        List<string> list = new List<string>();
-        list.Add("one");
-        list.Add("two");
-        list.Remove("one");
-        
-        Dictionary<int, string> dict = new Dictionary<int, string>();
-        dict.Add(1, "one");
-        
-        HashSet<string> hashSet = new HashSet<string>();
-        hashSet.Add("one");
-        hashSet.Add("two");
-    }
 }
