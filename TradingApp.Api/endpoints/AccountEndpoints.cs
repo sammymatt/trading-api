@@ -17,7 +17,7 @@ public static class AccountEndpoints
         {
             var account = await accountService.Retrieve(name);
             if (account is null)
-                return Results.NotFound();
+                return Results.NotFound("Account not found");
 
             var response = new AccountResponse(account.Id, account.Name, account.Balance);
             return Results.Ok(response);
@@ -26,12 +26,17 @@ public static class AccountEndpoints
         app.MapPost("/api/accounts/{accountId}/deposit", async (string accountId, DepositRequest request, IAccountService accountService) =>
         {
             var account = await accountService.Deposit(accountId, request.Amount);
+            if (account is null)
+                return Results.NotFound("Account not found");
+            
             return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
         });
         
         app.MapPost("/api/accounts/{accountId}/withdraw", async (string accountId, WithdrawRequest request, IAccountService accountService) =>
         {
             var account = await accountService.Withdraw(accountId, request.Amount);
+            if (account is null)
+                return Results.NotFound("Account not found");
             return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
         });
     }

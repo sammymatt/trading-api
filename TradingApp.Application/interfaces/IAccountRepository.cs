@@ -8,7 +8,7 @@ public interface IAccountRepository
     
     public Task<Account?> GetAccount(string name);
     
-    public Task<Account> Deposit(String accountId, decimal amount);
+    public Task<Account?> Deposit(String accountId, decimal amount);
     
     public Task<Account> Withdraw(String accountId, decimal amount);
 }

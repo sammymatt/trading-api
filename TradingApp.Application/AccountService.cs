@@ -20,23 +20,34 @@ public class AccountService : IAccountService
         if (name != null && amount > 0)
         {
             await _accountRepository.AddAccount(account);
+            _logger.LogInformation("Account created successfully: {AccountId}", account.Id);
         }
-        
-        _logger.LogInformation("Account created successfully: {AccountId}", account.Id);
         return account;
     }
 
     public async Task<Account?> Retrieve(string name)
     {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            _logger.LogWarning("Attempted to retrieve account with null or empty name");
+            return null;
+        }
+
         _logger.LogInformation("Account retrieval requested: {AccountName}", name);
-        var account = await _accountRepository.GetAccount(name);
-        
+        Account? account = await _accountRepository.GetAccount(name);
+
         return account;
     }
 
-    public async Task<Account> Deposit(string accountId, decimal amount)
+    public async Task<Account?> Deposit(string accountId, decimal amount)
     {
         var account = await _accountRepository.Deposit(accountId, amount);
+        
+        if (account == null)
+        {
+            _logger.LogInformation("Deposit amount {Amount} unsuccessful for: {AccountId} - account not found.", amount, accountId);
+            return null;
+        }
         
         _logger.LogInformation("Deposit amount {Amount} successful for: {AccountId}", amount, account.Id);
         return account;
@@ -45,6 +56,12 @@ public class AccountService : IAccountService
     public async Task<Account> Withdraw(string accountId, decimal amount)
     {
         var account = await _accountRepository.Withdraw(accountId, amount);
+        
+        if (account == null)
+        {
+            _logger.LogInformation("Withdraw amount {Amount} unsuccessful for: {AccountId} - account not found.", amount, accountId);
+            return null;
+        }
         
         _logger.LogInformation("Withdrawal amount {Amount} successful for: {AccountId}", amount, account.Id);
         return account;
