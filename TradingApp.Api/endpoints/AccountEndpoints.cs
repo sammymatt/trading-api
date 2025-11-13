@@ -23,7 +23,7 @@ public static class AccountEndpoints
             return Results.Ok(response);
         });
 
-        app.MapPost("/api/accounts/{accountId}/deposit", async (string accountId, DepositRequest request, IAccountService accountService) =>
+        app.MapPatch("/api/accounts/{accountId}/deposit", async (string accountId, DepositRequest request, IAccountService accountService) =>
         {
             var account = await accountService.Deposit(accountId, request.Amount);
             if (account is null)
@@ -32,11 +32,12 @@ public static class AccountEndpoints
             return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
         });
         
-        app.MapPost("/api/accounts/{accountId}/withdraw", async (string accountId, WithdrawRequest request, IAccountService accountService) =>
+        app.MapPatch("/api/accounts/{accountId}/withdraw", async (string accountId, WithdrawRequest request, IAccountService accountService) =>
         {
             var account = await accountService.Withdraw(accountId, request.Amount);
             if (account is null)
                 return Results.NotFound("Account not found");
+            
             return Results.Ok(new AccountResponse(account.Id, account.Name, account.Balance));
         });
     }

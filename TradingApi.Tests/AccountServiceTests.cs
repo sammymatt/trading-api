@@ -1,5 +1,6 @@
 ﻿using Moq;
 using Microsoft.Extensions.Logging;
+using TradingApi.Tests;
 using TradingApp.Application;
 using TradingApp.Application.interfaces;
 using TradingApp.Domain.entities;
@@ -23,15 +24,14 @@ public class AccountServiceTests
     public async Task Create_ValidInput_ShouldAddAccountToRepository()
     {
         // Arrange
-        string name = "TestAccount";
-        decimal amount = 100m;
+        Account account = new AccountBuilder().Build();
 
         // Act
-        var result = await _service.Create(name, amount);
+        var result = await _service.Create(account.Name, 50m);
 
         // Assert
-        Assert.That(result.Name, Is.EqualTo(name));
-        Assert.That(result.Balance, Is.EqualTo(amount));
+        Assert.That(result.Name, Is.EqualTo(account.Name));
+        Assert.That(result.Balance, Is.EqualTo(50m));
         
         _accountRepositoryMock.Verify(r => r.AddAccount(It.IsAny<Account>()), Times.Once);
     }
@@ -40,11 +40,10 @@ public class AccountServiceTests
     public async Task Create_InvalidInput_ShouldNotAddAccountToRepository()
     {
         // Arrange
-        string name = "";
-        decimal amount = 100m;
+        Account account = new AccountBuilder().WithName("").Build();
         
         // Act
-        var result = await _service.Create("TestAccount", 0m);
+        var result = await _service.Create(account.Name, 0m);
         
         // Assert
         _accountRepositoryMock.Verify(
@@ -57,33 +56,32 @@ public class AccountServiceTests
     public async Task Retrieve_ValidInput_ShouldCallRepositoryAndReturnAccount()
     {
         // Arrange
-        string name = "TestAccount";
-        Account account = new Account(name, balance: 100m);
-        _accountRepositoryMock.Setup(r => r.GetAccount(name)).ReturnsAsync(account);
+        Account account = new AccountBuilder().Build();
+        _accountRepositoryMock.Setup(r => r.GetAccount(account.Name)).ReturnsAsync(account);
         
         // Act
-        var result = await _service.Retrieve(name);
+        var result = await _service.Retrieve(account.Name);
         
         // Assert   
-        Assert.That(result.Name, Is.EqualTo(name));
+        Assert.That(result.Name, Is.EqualTo(account.Name));
         Assert.That(result.Balance, Is.EqualTo(account.Balance));
         
-        _accountRepositoryMock.Verify(r => r.GetAccount(name), Times.Once);
+        _accountRepositoryMock.Verify(r => r.GetAccount(account.Name), Times.Once);
     }
 
     [Test]
     public async Task Retrieve_InvalidInput_ShouldReturnNull()
     {
         // Arrange
-        string name = "";
+        Account account = new AccountBuilder().WithName("").Build();
         
         // Act
-        var result = await _service.Retrieve(name);
+        var result = await _service.Retrieve(account.Name);
         
         // Assert
         Assert.That(result, Is.Null);
         
-        _accountRepositoryMock.Verify(r => r.GetAccount(name), Times.Never);
+        _accountRepositoryMock.Verify(r => r.GetAccount(account.Name), Times.Never);
     }
 
     [Test]
